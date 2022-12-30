@@ -1,44 +1,24 @@
-package webDrivers.mozillaDriver.samokatTests;
+package UI_tests.chromeTests;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.praktikum.MainPage;
 import ru.yandex.praktikum.OrderForPage;
-
-import java.util.concurrent.TimeUnit;
+import samokatTests.TestBase;
 
 import static ru.yandex.praktikum.MainPage.*;
 
-public class MakeOrderTests {
-    WebDriver webDriver;
+public class makeOrderTests extends TestBase {
 
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/artembragin/Documents/geckodriver");
-        webDriver = new FirefoxDriver();
-        webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+@Test
+public void makeOrderTestPositiveUpperButton() {
+    MainPage mainPage = new MainPage(webDriver);
 
-    }
-
-    @After
-    public void tearDown() {
-        webDriver.quit();
-    }
-
-
-    @Test
-    public void makeOrderTestPositiveUpperButton() {
-        MainPage mainPage = new MainPage(webDriver);
-
-        openSamokat();
-        clickMakeOrderUpperButton();
-        fillOrderPageFields(OrderForPage.namePetya, OrderForPage.surnamePetya, "Рябиновая 57", "79563327766");
-        fillRentAboutPage("Привезите утром или в обед", "29.02.2023");
-        orderMadeCheck();
-    }
+    openSamokat();
+    clickMakeOrderUpperButton();
+    fillOrderPageFields(OrderForPage.namePetya, OrderForPage.surnamePetya, "Рябиновая 57", "79563327766");
+    fillRentAboutPage("Привезите утром или в обед", "29.02.2023");
+    orderMadeCheck();
+}
 
     @Test
     public void makeOrderTestPositiveLowerButton() {
@@ -69,7 +49,7 @@ public class MakeOrderTests {
         openSamokat();
         clickMakeOrderLowerButton();
         fillOrderPageFields(OrderForPage.nameVasya, OrderForPage.surnameVasya, "Рябиновая 57", "79563327766");
-        fillRentAboutPageNegative("Привезите утром или в обед", "29.02.2023");
+        fillRentAboutPageNegative("Привезите вечером", "00.02.2023");
         orderNotMadeCheck();
     }
 }

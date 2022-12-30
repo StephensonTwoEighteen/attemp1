@@ -1,4 +1,4 @@
-package webDrivers.mozillaDriver.samokatTests;
+package UI_tests.mozillaTests;
 
 import org.junit.After;
 import org.junit.Before;

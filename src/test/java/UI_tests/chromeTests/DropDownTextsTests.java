@@ -1,4 +1,4 @@
-package webDrivers.chromeDriver.samokatTests;
+package UI_tests.chromeTests;
 
 import org.junit.Test;
 import ru.yandex.praktikum.MainPage;
