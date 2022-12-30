@@ -134,7 +134,6 @@ public class MainPage {
         }
 
         public static void assertEqualThird() {
-            //webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             assertEquals(ExpectedText, ActualText);
         }
     }

@@ -14,18 +14,6 @@ import static ru.yandex.praktikum.MainPage.SixthText.*;
 import static ru.yandex.praktikum.MainPage.openSamokat;
 
 public class DropDownTextsTests extends TestBase {
-    //public WebDriver webDriver;
-    /*@Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
-    @After
-    public void tearDown() {
-        webDriver.quit();
-    }*/
 
     @Test
     public void firstDropDownTextCheck() {
